@@ -1,0 +1,39 @@
+[
+    {
+      "type": 1,
+      "title": "Overseerr",
+      "name": "overseerr",
+      "description": "Overseerr aims to make you and your user's lives more effortless than ever before. .",
+      "logo": "https://overseerr.dev/_next/image?url=%2Fos_logo_filled.svg&w=96&q=75",
+      "image": "lscr.io/linuxserver/overseerr:latest",
+      "categories": [
+        "Downloaders",
+        "Video"
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        {
+          "WebUI": "5055:5055/tcp"
+        }
+      ],
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "!config/Prowlarr"
+        }
+      ],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "!PUID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "!PGID"
+        }
+      ]
+    }
+]
