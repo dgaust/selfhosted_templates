@@ -14,7 +14,7 @@
       "restart_policy": "unless-stopped",
       "ports": [
         {
-          "WebUI": "9696:9696/tcp"
+          "WebUI": "8787:8787/tcp"
         }
       ],
       "volumes": [
