@@ -20,7 +20,7 @@
       "volumes": [
         {
           "container": "/config",
-          "bind": "!config/Prowlarr"
+          "bind": "!config/Readarr"
         },
         {
           "container": "/dev/rtc",
