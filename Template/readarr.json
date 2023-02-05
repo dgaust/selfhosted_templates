@@ -1,0 +1,51 @@
+[
+    {
+      "type": 1,
+      "title": "Readarr",
+      "name": "Readarr",
+      "description": "Readarr is an ebook and audiobook collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new books from your favorite authors and will grab, sort, and rename them. Note that only one type of a given book is supported. If you want both an audiobook and ebook of a given book you will need multiple instances.",
+      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/readarr-logo.png",
+      "image": "lscr.io/linuxserver/readarr",
+      "categories": [
+        "Downloaders",
+        "Video"
+      ],
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "ports": [
+        {
+          "WebUI": "9696:9696/tcp"
+        }
+      ],
+      "volumes": [
+        {
+          "container": "/config",
+          "bind": "!config/Prowlarr"
+        },
+        {
+          "container": "/dev/rtc",
+          "bind": "/dev/rtc"
+        },
+        {
+          "container": "/downloads",
+          "bind": "/mnt/downloads"
+        },
+        {
+          "container": "/media",
+          "bind": "/mnt/media"
+        }
+      ],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "!PUID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "!PGID"
+        }
+      ]
+    }
+]
